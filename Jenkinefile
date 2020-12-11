@@ -20,10 +20,17 @@ pipeline
                         sh 'mvn test'
                      }
                      |}
-                      stage('Please package the code')
+             stage('Please package the code')
              {
                steps{withMaven(jdk: 'localjdk', maven: 'localmaven') 
                         sh 'mvn package'
+                     }
+    }
+   
+    stage('Please deployment the code')
+             {
+               steps{withMaven(jdk: 'localjdk', maven: 'localmaven') 
+                        sh 'mvn deployment'
                      }
     }
    
