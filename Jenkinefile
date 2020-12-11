@@ -5,7 +5,8 @@ pipeline
      {
          stage ('scm checkout')
             {
-                step(git 'https://github.com/Nutan66/maven-project')
+                steps{
+                git branch  'https://github.com/Nutan66/maven-project')
             }
     }
 }
