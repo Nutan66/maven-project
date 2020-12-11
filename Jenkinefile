@@ -5,7 +5,7 @@ pipline
      {
          stage ('scm checkout')
             {
-                steps(git branch: 'main', url: 'https://github.com/Nutan66/demopipline')
+                step(git 'https://github.com/Nutan66/maven-project')
             }
     }
 }
