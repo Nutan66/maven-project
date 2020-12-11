@@ -10,8 +10,8 @@ pipeline
             }
     
     stage('Please compile the code')
-
-{step
+{
+steps
 {
     withMaven(jdk: 'localjdk', maven: 'localmaven') {
     sh 'mvn compile'
@@ -19,5 +19,6 @@ pipeline
     }
     
     
+}
 }
 }
