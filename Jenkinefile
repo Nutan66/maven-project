@@ -5,17 +5,24 @@ pipeline
      {
          stage ('scm checkout')
             {
-                steps(git 'https://github.com/Nutan66/maven-project')
+                steps
+                    {
+                      git branch: 'master', url: 'https://github.com/Nutan66/maven-project'
+                     }
             }
-    stage('Please compile the code')
+           
+           stage('Please compile the code')
+           {
+              steps
+                 {
+                   withMaven(jdk: 'localjdk', maven: 'localmaven' 
+                   sh 'mvn compile'
+                 }
+               
+            }
+            
+            
 
-{step
-{
-    withMaven(jdk: 'localjdk', maven: 'localmaven') {
-    sh 'mvn compile'
-}
-
-}
     }
+ }
 
-}
