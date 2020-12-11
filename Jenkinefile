@@ -8,5 +8,15 @@ pipeline
                 steps{
                             git branch: 'master', url: 'https://github.com/Nutan66/maven-project' }
             }
+    
+    stage('Please compile the code')
+
+{step
+{
+    withMaven(jdk: 'localjdk', maven: 'localmaven') {
+    sh 'mvn compile'
+}
     }
+    
+    
 }
